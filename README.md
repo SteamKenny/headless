@@ -17,7 +17,7 @@ This repository contains scripts to quickly switch between desktop GUI mode and 
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/kh0pper/headless.git
+   git clone https://github.com/charliopoulos/headless.git
    cd headless
    ```
 
