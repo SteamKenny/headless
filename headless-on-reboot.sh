@@ -15,13 +15,31 @@ else
     exit 1
 fi
 
-# Create auto-login configuration for console
+# Set AUTO_LOGIN to "true" to enable autologin, "false" to disable
+AUTO_LOGIN="${AUTO_LOGIN:-false}"
+
+# To keep auto-login disabled (default): run the script normally.
+# To enable it temporarily: AUTO_LOGIN=true ./headless-on-reboot.sh
+# Or set AUTO_LOGIN=true in an environment file or wrapper if you want it to persist.
+
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d/
-sudo tee /etc/systemd/system/getty@tty1.service.d/override.conf > /dev/null << EOF
+
+if [ "$AUTO_LOGIN" = "true" ]; then
+  echo "Configuring auto-login for console (AUTO_LOGIN=true)"
+  sudo tee /etc/systemd/system/getty@tty1.service.d/override.conf > /dev/null << EOF
 [Service]
 ExecStart=
 ExecStart=-/sbin/agetty --noissue --autologin $(whoami) %I \$TERM
 EOF
+else
+  echo "Configuring console without auto-login (AUTO_LOGIN=false)"
+  sudo tee /etc/systemd/system/getty@tty1.service.d/override.conf > /dev/null << EOF
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --noissue %I \$TERM
+EOF
+fi
+
 
 if [ $? -eq 0 ]; then
     echo "✓ Configured auto-login to console"
