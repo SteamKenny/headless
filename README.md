@@ -1,5 +1,5 @@
 > [!NOTE]
-> This is a minor modification to allow it to work with Zorin systems.  It may work with others, but this has not been tested!
+> This is a minor modification to allow the scripts to work with Zorin systems.  It may work with others, but this has NOT been tested!
 
 # Linux Headless Mode Scripts
 
