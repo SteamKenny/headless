@@ -1,3 +1,7 @@
+> [!NOTE]
+> This is a minor modification to allow it to work with Zorin systems.  It may work with others, but this has not been tested!
+```
+
 # Linux Headless Mode Scripts
 
 Easy switching between headless and GUI modes on Zorin systems.
