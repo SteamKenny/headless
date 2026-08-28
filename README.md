@@ -1,10 +1,10 @@
 # Linux Headless Mode Scripts
 
-Easy switching between headless and GUI modes on Linux Mint systems.
+Easy switching between headless and GUI modes on Zorin systems.
 
 ## Overview
 
-This repository contains scripts to quickly switch between desktop GUI mode and headless server mode on Linux Mint systems. Perfect for machines that need to operate as both desktop workstations and headless servers.
+This repository contains scripts to quickly switch between desktop GUI mode and headless server mode on Zorin systems. Perfect for machines that need to operate as both desktop workstations and headless servers.
 
 ## Features
 
@@ -17,7 +17,7 @@ This repository contains scripts to quickly switch between desktop GUI mode and 
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/charliopoulos/headless.git
+   git clone https://github.com/SteamKenny/headless.git
    cd headless
    ```
 
@@ -62,7 +62,7 @@ sudo reboot
 
 ## Requirements
 
-- Linux Mint (tested) or Ubuntu-based systems
+- Zorin (tested) or Ubuntu-based systems
 - systemd-based system
 - sudo access for system configuration
 
