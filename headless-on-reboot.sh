@@ -15,6 +15,12 @@ else
     exit 1
 fi
 
+# Switch grub boot to text
+sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="[^"]*/GRUB_CMDLINE_LINUX_DEFAULT="text/' /etc/default/grub
+sudo update-grub
+
+echo "✓ Switch grub boot mode to text"
+
 # Set AUTO_LOGIN to "true" to enable autologin, "false" to disable
 AUTO_LOGIN="${AUTO_LOGIN:-false}"
 

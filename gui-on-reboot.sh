@@ -15,6 +15,12 @@ else
     exit 1
 fi
 
+# Switch grub boot to gui
+sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="[^"]*/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash/' /etc/default/grub
+sudo update-grub
+
+echo "✓ Switch grub boot mode to gui"
+
 # Remove auto-login configuration
 if [ -f /etc/systemd/system/getty@tty1.service.d/override.conf ]; then
     sudo rm -f /etc/systemd/system/getty@tty1.service.d/override.conf
