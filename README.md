@@ -40,6 +40,12 @@ headless-on-reboot
 sudo reboot
 ```
 
+### Switch to Headless Mode (auto login)
+```bash
+AUTO_LOGIN=true ./headless-on-reboot.sh
+sudo reboot
+```
+
 ### Switch to GUI Mode
 ```bash
 gui-on-reboot
@@ -50,12 +56,14 @@ sudo reboot
 
 ### Headless Mode
 - Sets systemd target to `multi-user.target`
-- Configures auto-login to console
+- Removes grub splash (enables text boot)
+- Configures auto-login to console (opt-in)
 - Maintains SSH server access
 - Saves system resources by not loading GUI
 
 ### GUI Mode
 - Sets systemd target to `graphical.target`
+- Enables grub splash
 - Removes auto-login configuration
 - Returns to normal desktop login
 - Maintains SSH server access
